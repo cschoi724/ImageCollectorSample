@@ -5,7 +5,7 @@
 //  Created by 일하는석찬 on 2/17/25.
 //
 
-struct ImageInfo {
+public struct ImageInfo {
     let id: String
     let url: String
     let width: Int
