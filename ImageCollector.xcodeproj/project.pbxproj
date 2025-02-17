@@ -41,6 +41,13 @@
 		3B0B1F9F2D62FAB200226F6A /* MockCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B1F9E2D62FAAE00226F6A /* MockCoreDataManager.swift */; };
 		3B0B1FA12D62FAF000226F6A /* ImageRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B1FA02D62FAE900226F6A /* ImageRepositoryTests.swift */; };
 		3B0B1FA62D62FECE00226F6A /* CoreDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B1FA52D62FEBE00226F6A /* CoreDataManagerProtocol.swift */; };
+		3B9A57102D630E5800A0EE8D /* FetchImageListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A570F2D630E4E00A0EE8D /* FetchImageListUseCase.swift */; };
+		3B9A57122D630ECA00A0EE8D /* MockImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57112D630EC600A0EE8D /* MockImageRepository.swift */; };
+		3B9A57142D630EFB00A0EE8D /* FetchImageListUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57132D630EF800A0EE8D /* FetchImageListUseCaseTests.swift */; };
+		3B9A57162D630FE300A0EE8D /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57152D630FE100A0EE8D /* DependencyInjector.swift */; };
+		3B9A57182D630FF300A0EE8D /* DataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57172D630FF100A0EE8D /* DataAssembly.swift */; };
+		3B9A571A2D630FFC00A0EE8D /* DomainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57192D630FFB00A0EE8D /* DomainAssembly.swift */; };
+		3B9A571C2D63100300A0EE8D /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A571B2D63100200A0EE8D /* PresentationAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +102,13 @@
 		3B0B1F9E2D62FAAE00226F6A /* MockCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoreDataManager.swift; sourceTree = "<group>"; };
 		3B0B1FA02D62FAE900226F6A /* ImageRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepositoryTests.swift; sourceTree = "<group>"; };
 		3B0B1FA52D62FEBE00226F6A /* CoreDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerProtocol.swift; sourceTree = "<group>"; };
+		3B9A570F2D630E4E00A0EE8D /* FetchImageListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImageListUseCase.swift; sourceTree = "<group>"; };
+		3B9A57112D630EC600A0EE8D /* MockImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockImageRepository.swift; sourceTree = "<group>"; };
+		3B9A57132D630EF800A0EE8D /* FetchImageListUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImageListUseCaseTests.swift; sourceTree = "<group>"; };
+		3B9A57152D630FE100A0EE8D /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		3B9A57172D630FF100A0EE8D /* DataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
+		3B9A57192D630FFB00A0EE8D /* DomainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainAssembly.swift; sourceTree = "<group>"; };
+		3B9A571B2D63100200A0EE8D /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +220,10 @@
 		3B0B1F4D2D62C6B800226F6A /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				3B9A57152D630FE100A0EE8D /* DependencyInjector.swift */,
+				3B9A57172D630FF100A0EE8D /* DataAssembly.swift */,
+				3B9A57192D630FFB00A0EE8D /* DomainAssembly.swift */,
+				3B9A571B2D63100200A0EE8D /* PresentationAssembly.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -239,6 +257,7 @@
 		3B0B1F512D62C72000226F6A /* Domain Layer */ = {
 			isa = PBXGroup;
 			children = (
+				3B9A570E2D630A9A00A0EE8D /* UseCases */,
 				3B0B1F662D62CB1800226F6A /* Interfaces */,
 				3B0B1F632D62CAAA00226F6A /* Entities */,
 			);
@@ -366,6 +385,7 @@
 				3B0B1F842D62D04300226F6A /* NetworkServiceTests.swift */,
 				3B0B1F982D62EA0000226F6A /* CoreDataManagerTests.swift */,
 				3B0B1FA02D62FAE900226F6A /* ImageRepositoryTests.swift */,
+				3B9A57132D630EF800A0EE8D /* FetchImageListUseCaseTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -377,8 +397,17 @@
 				3B0B1F8A2D62D2D700226F6A /* MockResponse.swift */,
 				3B0B1F9C2D62FA5000226F6A /* MockNetworkService.swift */,
 				3B0B1F9E2D62FAAE00226F6A /* MockCoreDataManager.swift */,
+				3B9A57112D630EC600A0EE8D /* MockImageRepository.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		3B9A570E2D630A9A00A0EE8D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				3B9A570F2D630E4E00A0EE8D /* FetchImageListUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,18 +556,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B0B1FA62D62FECE00226F6A /* CoreDataManagerProtocol.swift in Sources */,
+				3B9A57102D630E5800A0EE8D /* FetchImageListUseCase.swift in Sources */,
 				3B0B1F812D62CF4500226F6A /* APIEndpoints.swift in Sources */,
 				3B0B1F7F2D62CE8000226F6A /* NetworkLogger.swift in Sources */,
 				3B0B1F7D2D62CDE600226F6A /* NetworkConfiguration.swift in Sources */,
 				3B0B1F972D62DAE100226F6A /* CoreDataManager.swift in Sources */,
 				3B0B1F752D62CD6300226F6A /* NetworkService.swift in Sources */,
+				3B9A571A2D630FFC00A0EE8D /* DomainAssembly.swift in Sources */,
 				3B0B1F902D62D86000226F6A /* ImageEntity.swift in Sources */,
 				3B0B1F932D62D8B200226F6A /* CoreDataConvertible.swift in Sources */,
 				3B0B1F722D62CC9C00226F6A /* ImageRepositoryImpl.swift in Sources */,
 				3B0B1F402D62C64000226F6A /* ContentView.swift in Sources */,
 				3B0B1F682D62CB4200226F6A /* ImageRepository.swift in Sources */,
+				3B9A571C2D63100300A0EE8D /* PresentationAssembly.swift in Sources */,
 				3B0B1F652D62CACF00226F6A /* ImageInfo.swift in Sources */,
 				3B0B1F702D62CC4B00226F6A /* ImageDTO.swift in Sources */,
+				3B9A57162D630FE300A0EE8D /* DependencyInjector.swift in Sources */,
+				3B9A57182D630FF300A0EE8D /* DataAssembly.swift in Sources */,
 				3B0B1F412D62C64000226F6A /* ImageCollector.xcdatamodeld in Sources */,
 				3B0B1F422D62C64000226F6A /* ImageCollectorApp.swift in Sources */,
 				3B0B1F6A2D62CB9600226F6A /* ServiceError.swift in Sources */,
@@ -555,7 +589,9 @@
 			files = (
 				3B0B1F8B2D62D2D900226F6A /* MockResponse.swift in Sources */,
 				3B0B1F852D62D04500226F6A /* NetworkServiceTests.swift in Sources */,
+				3B9A57122D630ECA00A0EE8D /* MockImageRepository.swift in Sources */,
 				3B0B1F9D2D62FA6900226F6A /* MockNetworkService.swift in Sources */,
+				3B9A57142D630EFB00A0EE8D /* FetchImageListUseCaseTests.swift in Sources */,
 				3B0B1FA12D62FAF000226F6A /* ImageRepositoryTests.swift in Sources */,
 				3B0B1F992D62EA0300226F6A /* CoreDataManagerTests.swift in Sources */,
 				3B0B1F9F2D62FAB200226F6A /* MockCoreDataManager.swift in Sources */,
