@@ -10,7 +10,9 @@ enum ServiceError: Error, Equatable {
     case clientError(Int, String)
     case serverError(Int, String)
     case decodingError(String)
+    case databaseError(String)
     case unknownError(String)
+    
     
     var userFriendlyMessage: String {
         switch self {
@@ -22,6 +24,8 @@ enum ServiceError: Error, Equatable {
             return "서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요: \(message)"
         case .decodingError(let message):
             return "데이터 처리 중 문제가 발생했습니다: \(message)"
+        case .databaseError(let message):
+            return "데이타베이스 오류가 발생했습니다. 잠시 후 다시 시도해주세요.: \(message)"
         case .unknownError(let message):
             return "알 수 없는 오류: \(message)"
         }

@@ -12,8 +12,8 @@ import Combine
 final class NetworkServiceTests: XCTestCase {
     private var cancellables: Set<AnyCancellable> = []
     private var mockSession: URLSession!
-    private var networkService: DefaultNetworkService!
-    private var mockConfiguration: APINetworkConfig!
+    private var networkService: NetworkService!
+    private var mockConfiguration: NetworkConfiguration!
 
     override func setUp() {
         super.setUp()

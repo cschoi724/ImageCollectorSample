@@ -7,8 +7,9 @@
 
 import CoreData
 
-final class CoreDataManager {
+final class CoreDataManager: CoreDataManagerProtocol {
     static let shared = CoreDataManager()
+    
     var persistentContainer: NSPersistentContainer
     var context: NSManagedObjectContext { persistentContainer.viewContext }
 
@@ -19,11 +20,6 @@ final class CoreDataManager {
                 fatalError("Core Data 로드 실패: \(error.localizedDescription)")
             }
         }
-    }
-    
-    // 테스트를 위한 컨테이너 설정 메서드
-    func setupForTesting(container: NSPersistentContainer) {
-        self.persistentContainer = container
     }
 
     func saveContext() {

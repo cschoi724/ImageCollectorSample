@@ -11,3 +11,9 @@ struct ImageDTO: Codable {
     let width: Int
     let height: Int
 }
+
+extension ImageDTO {
+    var domain: ImageInfo {
+        .init(id: id, url: url, width: width, height: height)
+    }
+}

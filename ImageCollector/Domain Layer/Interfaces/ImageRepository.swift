@@ -8,5 +8,5 @@
 import Combine
 
 protocol ImageRepository {
-    func fetchImageList() -> AnyPublisher<ImageInfo, ServiceError>
+    func fetchImageList() -> AnyPublisher<[ImageInfo], ServiceError>
 }
