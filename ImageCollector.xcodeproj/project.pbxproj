@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B0B1F402D62C64000226F6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B1F3A2D62C64000226F6A /* ContentView.swift */; };
 		3B0B1F412D62C64000226F6A /* ImageCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B1F3B2D62C64000226F6A /* ImageCollector.xcdatamodeld */; };
 		3B0B1F422D62C64000226F6A /* ImageCollectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B1F3C2D62C64000226F6A /* ImageCollectorApp.swift */; };
-		3B0B1F432D62C64000226F6A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B1F3D2D62C64000226F6A /* Persistence.swift */; };
 		3B0B1F442D62C64000226F6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B1F372D62C64000226F6A /* Preview Assets.xcassets */; };
 		3B0B1F452D62C64000226F6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0B1F392D62C64000226F6A /* Assets.xcassets */; };
 		3B0B1F492D62C64000226F6A /* ImageCollectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0B1F462D62C64000226F6A /* ImageCollectorUITests.swift */; };
@@ -48,6 +46,11 @@
 		3B9A57182D630FF300A0EE8D /* DataAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57172D630FF100A0EE8D /* DataAssembly.swift */; };
 		3B9A571A2D630FFC00A0EE8D /* DomainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57192D630FFB00A0EE8D /* DomainAssembly.swift */; };
 		3B9A571C2D63100300A0EE8D /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A571B2D63100200A0EE8D /* PresentationAssembly.swift */; };
+		3B9A571E2D6311A100A0EE8D /* MainFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A571D2D63119100A0EE8D /* MainFeature.swift */; };
+		3B9A57202D63168000A0EE8D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A571F2D63166700A0EE8D /* MainView.swift */; };
+		3B9A57222D6316BE00A0EE8D /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57212D6316BB00A0EE8D /* ImageCell.swift */; };
+		3B9A57242D63180100A0EE8D /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57232D6317FF00A0EE8D /* ImageGridView.swift */; };
+		3B9A57262D63181800A0EE8D /* DeviceOrientationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A57252D63181600A0EE8D /* DeviceOrientationModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,9 +76,7 @@
 		3B0B1F212D62C48300226F6A /* ImageCollectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCollectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0B1F372D62C64000226F6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B0B1F392D62C64000226F6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3B0B1F3A2D62C64000226F6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B0B1F3C2D62C64000226F6A /* ImageCollectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectorApp.swift; sourceTree = "<group>"; };
-		3B0B1F3D2D62C64000226F6A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3B0B1F3F2D62C64000226F6A /* ImageCollector.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageCollector.xcdatamodel; sourceTree = "<group>"; };
 		3B0B1F462D62C64000226F6A /* ImageCollectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectorUITests.swift; sourceTree = "<group>"; };
 		3B0B1F472D62C64000226F6A /* ImageCollectorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectorUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -109,6 +110,11 @@
 		3B9A57172D630FF100A0EE8D /* DataAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAssembly.swift; sourceTree = "<group>"; };
 		3B9A57192D630FFB00A0EE8D /* DomainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainAssembly.swift; sourceTree = "<group>"; };
 		3B9A571B2D63100200A0EE8D /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
+		3B9A571D2D63119100A0EE8D /* MainFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeature.swift; sourceTree = "<group>"; };
+		3B9A571F2D63166700A0EE8D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3B9A57212D6316BB00A0EE8D /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		3B9A57232D6317FF00A0EE8D /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
+		3B9A57252D63181600A0EE8D /* DeviceOrientationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceOrientationModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,8 +238,6 @@
 			isa = PBXGroup;
 			children = (
 				3B0B1F3C2D62C64000226F6A /* ImageCollectorApp.swift */,
-				3B0B1F3A2D62C64000226F6A /* ContentView.swift */,
-				3B0B1F3D2D62C64000226F6A /* Persistence.swift */,
 			);
 			path = Applications;
 			sourceTree = "<group>";
@@ -296,6 +300,10 @@
 		3B0B1F5F2D62C9C800226F6A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3B9A571F2D63166700A0EE8D /* MainView.swift */,
+				3B9A57232D6317FF00A0EE8D /* ImageGridView.swift */,
+				3B9A57212D6316BB00A0EE8D /* ImageCell.swift */,
+				3B9A57252D63181600A0EE8D /* DeviceOrientationModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +318,7 @@
 		3B0B1F612D62C9D400226F6A /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				3B9A571D2D63119100A0EE8D /* MainFeature.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -557,26 +566,29 @@
 			files = (
 				3B0B1FA62D62FECE00226F6A /* CoreDataManagerProtocol.swift in Sources */,
 				3B9A57102D630E5800A0EE8D /* FetchImageListUseCase.swift in Sources */,
+				3B9A571E2D6311A100A0EE8D /* MainFeature.swift in Sources */,
 				3B0B1F812D62CF4500226F6A /* APIEndpoints.swift in Sources */,
 				3B0B1F7F2D62CE8000226F6A /* NetworkLogger.swift in Sources */,
+				3B9A57222D6316BE00A0EE8D /* ImageCell.swift in Sources */,
+				3B9A57262D63181800A0EE8D /* DeviceOrientationModifier.swift in Sources */,
 				3B0B1F7D2D62CDE600226F6A /* NetworkConfiguration.swift in Sources */,
 				3B0B1F972D62DAE100226F6A /* CoreDataManager.swift in Sources */,
 				3B0B1F752D62CD6300226F6A /* NetworkService.swift in Sources */,
 				3B9A571A2D630FFC00A0EE8D /* DomainAssembly.swift in Sources */,
+				3B9A57242D63180100A0EE8D /* ImageGridView.swift in Sources */,
 				3B0B1F902D62D86000226F6A /* ImageEntity.swift in Sources */,
 				3B0B1F932D62D8B200226F6A /* CoreDataConvertible.swift in Sources */,
 				3B0B1F722D62CC9C00226F6A /* ImageRepositoryImpl.swift in Sources */,
-				3B0B1F402D62C64000226F6A /* ContentView.swift in Sources */,
 				3B0B1F682D62CB4200226F6A /* ImageRepository.swift in Sources */,
 				3B9A571C2D63100300A0EE8D /* PresentationAssembly.swift in Sources */,
 				3B0B1F652D62CACF00226F6A /* ImageInfo.swift in Sources */,
 				3B0B1F702D62CC4B00226F6A /* ImageDTO.swift in Sources */,
 				3B9A57162D630FE300A0EE8D /* DependencyInjector.swift in Sources */,
 				3B9A57182D630FF300A0EE8D /* DataAssembly.swift in Sources */,
+				3B9A57202D63168000A0EE8D /* MainView.swift in Sources */,
 				3B0B1F412D62C64000226F6A /* ImageCollector.xcdatamodeld in Sources */,
 				3B0B1F422D62C64000226F6A /* ImageCollectorApp.swift in Sources */,
 				3B0B1F6A2D62CB9600226F6A /* ServiceError.swift in Sources */,
-				3B0B1F432D62C64000226F6A /* Persistence.swift in Sources */,
 				3B0B1F832D62CF9400226F6A /* SearchRequest.swift in Sources */,
 				3B0B1F7B2D62CD9800226F6A /* Endpoint.swift in Sources */,
 				3B0B1F772D62CD8000226F6A /* APIError.swift in Sources */,

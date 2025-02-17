@@ -6,15 +6,33 @@
 //
 
 import SwiftUI
+import Swinject
+import ComposableArchitecture
 
 @main
 struct ImageCollectorApp: App {
-    let persistenceController = PersistenceController.shared
+    let injector: DependencyInjector
+
+    init() {
+        injector = DependencyInjectorImpl(container: Container())
+        injector.assemble([
+            DataAssembly(),
+            DomainAssembly(),
+            PresentationAssembly()
+        ])
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            let feature = injector.resolve(MainFeature.self)
+            MainView(
+                store: StoreOf<MainFeature>(
+                    initialState: MainFeature.State(),
+                    reducer: {
+                        feature
+                    }
+                )
+            )
         }
     }
 }

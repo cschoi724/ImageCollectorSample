@@ -12,6 +12,10 @@ public struct ImageInfo {
     let height: Int
 }
 
+extension ImageInfo: Equatable, Hashable {
+    
+}
+
 /* ex
  "id": "ahv",
  "url": "https://cdn2.thecatapi.com/images/ahv.jpg",
