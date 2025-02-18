@@ -31,8 +31,9 @@ final class FetchImageListUseCaseTests: XCTestCase {
     // 정상적으로 이미지 리스트를 반환하는지 테스트
     func test_execute_Success() {
         let mockImages = [
-            ImageInfo(id: "1", url: "https://example.com/1.jpg", width: 100, height: 100),
-            ImageInfo(id: "2", url: "https://example.com/2.jpg", width: 200, height: 200)
+            ImageInfo(id: "1", url: "https://example.com/1.jpg", width: 100, height: 100, imageData: nil),
+            ImageInfo(id: "2", url: "https://example.com/2.jpg", width: 200, height: 200,
+                      imageData: nil)
         ]
         mockRepository.mockResponse = mockImages
 

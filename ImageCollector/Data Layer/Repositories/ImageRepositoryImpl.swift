@@ -47,19 +47,33 @@ extension ImageRepositoryImpl {
             do {
                 let existingEntities = try context.fetch(fetchRequest)
                 let existingMap = Dictionary(uniqueKeysWithValues: existingEntities.map { ($0.id!, $0) })
-
-                images.forEach { imageInfo in
-                    if let existingEntity = existingMap[imageInfo.id] {
-                        existingEntity.update(from: imageInfo)
-                    } else {
-                        if let newEntity = NSEntityDescription.insertNewObject(forEntityName: "ImageEntity", into: self.coreDataManager.context) as? ImageEntity {
-                            //let newEntity = ImageEntity(context: context)
-                            newEntity.update(from: imageInfo)
-                        }                        
+                
+                for imageInfo in images {
+                    Task {
+                        let imageData = try await self.downloadImageData(from: imageInfo.url)
+                        let imageInfo = ImageInfo(
+                            id: imageInfo.id,
+                            url: imageInfo.url,
+                            width: imageInfo.width,
+                            height: imageInfo.height,
+                            imageData: imageData
+                        )
+                        context.performAndWait {
+                            if let existingEntity = existingMap[imageInfo.id] {
+                                existingEntity.update(from: imageInfo)
+                            } else {
+                                if let newEntity = NSEntityDescription.insertNewObject(forEntityName: "ImageEntity", into: context) as? ImageEntity {
+                                    newEntity.update(from: imageInfo)
+                                }
+                            }
+                            do {
+                                try context.save()
+                            } catch {
+                                print("Core Data 저장 실패: \(error.localizedDescription)")
+                            }
+                        }
                     }
                 }
-                
-                try context.save()
             } catch {
                 print("Core Data 저장 실패: \(error.localizedDescription)")
             }
@@ -70,17 +84,32 @@ extension ImageRepositoryImpl {
         let context = coreDataManager.context
         return Future { promise in
             context.perform {
-                let fetchRequest: NSFetchRequest<ImageEntity> = ImageEntity.fetchRequest()
                 do {
+                    let countFetchRequest: NSFetchRequest<NSNumber> = NSFetchRequest(entityName: "ImageEntity")
+                    countFetchRequest.resultType = .countResultType
+                    let totalCount = try context.count(for: countFetchRequest)
+                    guard totalCount > 0 else {
+                        promise(.success([]))
+                        return
+                    }
+
+                    let maxOffset = max(totalCount - 10, 0)
+                    let randomOffset = Int.random(in: 0...maxOffset)
+
+                    let fetchRequest: NSFetchRequest<ImageEntity> = ImageEntity.fetchRequest()
+                    fetchRequest.fetchLimit = 10
+                    fetchRequest.fetchOffset = randomOffset
+                    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "id", ascending: false)]
                     let result = try context.fetch(fetchRequest)
                     let images = result.compactMap { entity -> ImageInfo? in
                         guard let id = entity.id,
-                                let url = entity.url else { return nil }
+                              let url = entity.url else { return nil }
                         return ImageInfo(
                             id: id,
                             url: url,
                             width: Int(entity.width),
-                            height: Int(entity.height)
+                            height: Int(entity.height),
+                            imageData: entity.imageData
                         )
                     }
                     promise(.success(images))
@@ -112,5 +141,14 @@ extension ImageRepositoryImpl {
         }
 
         return .unknownError("알 수 없는 에러 발생: \(error.localizedDescription)")
+    }
+    
+    private func downloadImageData(from urlString: String) async throws -> Data {
+        guard let url = URL(string: urlString) else {
+            throw APIError.invalidURL
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        return data
     }
 }

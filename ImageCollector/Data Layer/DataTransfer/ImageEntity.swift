@@ -15,6 +15,7 @@ public class ImageEntity: NSManagedObject {
     @NSManaged public var url: String?
     @NSManaged public var width: Int16
     @NSManaged public var height: Int16
+    @NSManaged public var imageData: Data?
 }
 
 extension ImageEntity: CoreDataConvertible {
@@ -25,7 +26,8 @@ extension ImageEntity: CoreDataConvertible {
             id: id ?? "",
             url: url ?? "",
             width: Int(width),
-            height: Int(height)
+            height: Int(height),
+            imageData: imageData
         )
     }
 
@@ -34,6 +36,7 @@ extension ImageEntity: CoreDataConvertible {
         self.url = model.url
         self.width = Int16(model.width)
         self.height = Int16(model.height)
+        self.imageData = model.imageData
     }
 }
 

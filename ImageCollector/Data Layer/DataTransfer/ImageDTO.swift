@@ -14,6 +14,6 @@ struct ImageDTO: Codable {
 
 extension ImageDTO {
     var domain: ImageInfo {
-        .init(id: id, url: url, width: width, height: height)
+        .init(id: id, url: url, width: width, height: height, imageData: nil)
     }
 }

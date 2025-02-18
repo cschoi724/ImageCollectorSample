@@ -17,7 +17,7 @@ struct ImageDetailView: View {
             ZStack {
                 Color.black.edgesIgnoringSafeArea(.all)
                 ScrollView([.horizontal, .vertical], showsIndicators: false) {
-                    ImageLoadingView(url: imageInfo.url)
+                    ImageLoadingView(imageInfo: imageInfo)
                         .scaleEffect(scale)
                         .gesture(
                             MagnificationGesture()

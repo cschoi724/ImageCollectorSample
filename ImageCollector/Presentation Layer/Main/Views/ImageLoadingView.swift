@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ImageLoadingView: View {
-    let url: String
+    let imageInfo: ImageInfo
 
     var body: some View {
-        AsyncImage(url: URL(string: url)) { phase in
+        AsyncImage(url: URL(string: imageInfo.url)) { phase in
             if let image = phase.image {
                 image
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
+            } else if let imageData = imageInfo.imageData,
+                      let uiImage = UIImage(data: imageData) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
             } else if phase.error != nil {
                 Color.gray
             } else {

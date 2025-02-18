@@ -3,6 +3,7 @@
     <entity name="ImageEntity" representedClassName=".ImageEntity" syncable="YES">
         <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <attribute name="width" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>

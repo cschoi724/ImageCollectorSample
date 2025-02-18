@@ -17,17 +17,19 @@ struct ImageCell: View {
                 image
                     .resizable()
                     .scaledToFill()
-                    .frame(width: size.width, height: size.height)
-                    .clipped()
+            } else if let imageData = imageInfo.imageData,
+                      let uiImage = UIImage(data: imageData) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFill()
             } else if phase.error != nil {
                 Color.gray
-                    .frame(width: size.width, height: size.height)
-                    .clipped()
             } else {
                 ProgressView()
-                    .frame(width: size.width, height: size.height)
             }
         }
+        .frame(width: size.width, height: size.height)
+        .clipped()
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .overlay(
             RoundedRectangle(cornerRadius: 10)
