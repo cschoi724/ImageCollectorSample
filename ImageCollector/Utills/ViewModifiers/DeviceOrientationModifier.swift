@@ -26,7 +26,6 @@ struct DeviceOrientationModifier: ViewModifier {
     }
 }
 
-
 extension View {
     func deviceOrientation(viewStore: ViewStore<MainFeature.State, MainFeature.Action>) -> some View {
         self.modifier(

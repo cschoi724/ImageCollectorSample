@@ -73,8 +73,7 @@ struct MainFeature: Reducer {
                     .eraseToAnyPublisher()
             }
         case .responseSuccess(let newResults):
-            let uniqueResults = Set(state.results + newResults)
-            state.results = Array(uniqueResults)
+            state.results += newResults
             state.isLoading = false
             return .none
         case .responseFailure(let error):
@@ -84,7 +83,6 @@ struct MainFeature: Reducer {
             return .none
         case .deviceOrientationChanged(let isPortrait):
             state.isPortrait = isPortrait
-            print(isPortrait)
             return .none
         }
     }
